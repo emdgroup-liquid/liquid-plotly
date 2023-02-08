@@ -1,0 +1,46 @@
+{
+  "name": "liquid_plotly",
+  "version": "1.0.0",
+  "description": "Liquid for Plotly",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/emdgroup-liquid/liquid-plotly.git"
+  },
+  "keywords": [
+    "Plotly",
+    "Dash"
+  ],
+  "bugs": {
+    "url": "https://github.com/emdgroup-liquid/liquid-plotly/issues"
+  },
+  "homepage": "https://github.com/emdgroup-liquid/liquid-plotly",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "vite --config vite.config.preview.ts",
+    "validate-init": "python _validate_init.py",
+    "prepublishOnly": "npm run validate-init",
+    "build:js": "vite build --config vite.config.ts",
+    "build:backends": "dash-generate-components ./src/ts/components liquid-plotly -p package-info.json --r-prefix 'ld' --jl-prefix 'ld' --ignore \\.test\\.",
+    "build": "npm run build:js && npm run build:backends",
+    "watch": "npm run build:js:dev -- --watch"
+  },
+  "author": "User Experience Strategy & Design unit, part of the Chief Digital Organization at EMD Group <liquid@emdgroup.com> (https://github.com/emdgroup-liquid)",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "dependencies": {
+    "@emdgroup-liquid/liquid": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.39",
+    "@vitejs/plugin-react": "^3.1.0",
+    "css-loader": "^6.7.3",
+    "prettier": "^2.8.3",
+    "ramda": "^0.28.0",
+    "react": "17.0.2",
+    "react-docgen": "^5.4.0",
+    "react-dom": "17.0.2",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.1"
+  }
+}
