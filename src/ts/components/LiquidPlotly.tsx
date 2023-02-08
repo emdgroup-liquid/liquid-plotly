@@ -3,7 +3,8 @@ import { DashComponentProps } from '../props'
 import './LiquidPlotly.css'
 
 type Props = {
-  // Insert props
+  label: string
+  value: string
 } & DashComponentProps
 
 /**

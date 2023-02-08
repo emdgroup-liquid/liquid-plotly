@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
+import replace from '@rollup/plugin-replace'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,7 +10,7 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/ts/index.ts'),
-      name: 'LiquidPlotly',
+      name: 'liquid_plotly',
       formats: ['umd'],
       // the proper extensions will be added
       fileName: 'liquid_plotly',
@@ -22,11 +23,18 @@ export default defineConfig({
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
-          vue: 'React',
+          react: 'React',
+          'react-dom': 'ReactDOM',
+          'plotly.js': 'Plotly',
+          'prop-types': 'PropTypes',
         },
-        sourcemap: true,
         dir: resolve(__dirname, 'liquid_plotly'),
       },
+      plugins: [
+        replace({
+          'process.env.NODE_ENV': JSON.stringify('production'),
+        }),
+      ],
     },
     emptyOutDir: false,
   },
