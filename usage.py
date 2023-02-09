@@ -17,7 +17,10 @@ app.layout = html.Div([
 ])
 
 
-@callback(Output('output', 'children'), Input('input', 'value'))
+@callback(
+    Output(component_id='output', component_property='children'),
+    Input(component_id='input', component_property='value')
+)
 def display_output(value):
     return 'You have entered {}'.format(value)
 

@@ -6,7 +6,7 @@ import '../utils/init'
 
 type Props = {
   tone?: string
-  autofocus?: boolean
+  autofocus?: Components.LdInput['autofocus']
   ldTabindex?: Components.LdInput['ldTabindex']
   type?: Components.LdInput['type']
 } & Omit<Components.LdInput, 'tone' | 'autofocus' | 'ldTabindex' | 'type'> &
@@ -16,8 +16,17 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-input/ LdInput}.
  */
 const Input = (props: Props) => {
-  // @ts-ignore
-  return <LdInput {...props} />
+  const onInput = (ev: CustomEvent<string>) => {
+    props.setProps({ value: ev.detail })
+  }
+
+  return (
+    <LdInput
+      {...props}
+      onLdinput={onInput}
+      tone={props.tone as 'dark' | undefined}
+    />
+  )
 }
 
 export default Input
