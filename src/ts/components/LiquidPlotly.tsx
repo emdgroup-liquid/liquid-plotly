@@ -3,7 +3,9 @@ import { DashComponentProps } from '../props'
 import './LiquidPlotly.css'
 
 type Props = {
+  /** The label */
   label: string
+  /** The value */
   value: string
 } & DashComponentProps
 
@@ -12,7 +14,11 @@ type Props = {
  */
 const LiquidPlotly = (props: Props) => {
   const { id } = props
-  return <div id={id}>Hello</div>
+  return (
+    <div className="foo" id={id}>
+      Hello
+    </div>
+  )
 }
 
 export default LiquidPlotly

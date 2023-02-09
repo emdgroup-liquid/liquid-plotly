@@ -1,13 +1,17 @@
-import liquid_plotly
+import liquid_plotly as ld
 from dash import Dash, callback, html, Input, Output
 
 app = Dash(__name__)
 
 app.layout = html.Div([
-    liquid_plotly.LiquidPlotly(
+    ld.Typo(
+        children='''
+            Dash: A web application framework for your data.
+        '''
+    ),
+    ld.Input(
         id='input',
         value='my-value',
-        label='my-label'
     ),
     html.Div(id='output')
 ])
