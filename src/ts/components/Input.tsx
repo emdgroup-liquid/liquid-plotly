@@ -7,7 +7,9 @@ import '../utils/init'
 type Props = {
   tone?: string
   autofocus?: boolean
-} & Omit<Omit<Components.LdInput, 'tone'>, 'autofocus'> &
+  ldTabindex?: Components.LdInput['ldTabindex']
+  type?: Components.LdInput['type']
+} & Omit<Components.LdInput, 'tone' | 'autofocus' | 'ldTabindex' | 'type'> &
   DashComponentProps
 
 /**

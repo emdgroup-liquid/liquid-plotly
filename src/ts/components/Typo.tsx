@@ -5,9 +5,11 @@ import { DashComponentProps } from '../props'
 import '../utils/init'
 
 type Props = {
+  tag?: string
+  variant?: Components.LdTypo['variant']
   ariaLabel?: string
   children: string | JSX.Element | JSX.Element[]
-} & Omit<Components.LdTypo, 'ariaLabel'> &
+} & Omit<Components.LdTypo, 'ariaLabel' | 'tag' | 'variant'> &
   DashComponentProps
 
 /**
