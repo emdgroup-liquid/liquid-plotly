@@ -2,7 +2,7 @@
 
 Liquid Plotly is a [Dash](https://dash.plotly.com/) component library based on the [Liquid Design System](https://www.figma.com/file/8GYcAOePm8Tt9qqJ7Gnv99/Liquid-Oxygen-(Share)?node-id=3%3A14310).
 
-Check out the [list of available components](https://github.com/emdgroup-liquid/liquid-plotly/blob/main/src/ts/index.ts).
+Check out the [list of available components](https://github.com/emdgroup-liquid/liquid-plotly/tree/main/src/ts/components).
 
 Get started with:
 1. Install Dash and its dependencies: https://dash.plotly.com/installation
