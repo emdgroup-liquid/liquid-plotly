@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
 import { LdInput } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../props'
-import '../utils/init'
 
 type Props = {
   /** Input tone. Use `'dark'` on white backgrounds. Default is a light tone. */

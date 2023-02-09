@@ -5,7 +5,7 @@ Description: Liquid for Plotly
 Depends: R (>= 3.0.2)
 Imports: 
 Suggests: 
-License: SEE LICENSE IN LICENSE.md + file LICENSE
+License: SEE LICENSE IN LICENSE.md
 URL: https://github.com/emdgroup-liquid/liquid-plotly
 BugReports: https://github.com/emdgroup-liquid/liquid-plotly/issues
 Encoding: UTF-8

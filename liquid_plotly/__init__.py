@@ -67,19 +67,17 @@ _js_dist.extend(
     [
         {
             'relative_package_path': 'liquid_plotly.umd.js',
-    
             'namespace': package_name
-        },
-        {
-            'relative_package_path': 'liquid_plotly.umd.js.map',
-    
-            'namespace': package_name,
-            'dynamic': True
         }
     ]
 )
 
-_css_dist = []
+_css_dist = [
+    {
+        'relative_package_path': 'style.css',
+        'namespace': package_name
+    },
+]
 
 
 for _component in __all__:

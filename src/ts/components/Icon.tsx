@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
 import { LdIcon } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../props'
-import '../utils/init'
 
 type Props = {
   /** The actual content of the element. */

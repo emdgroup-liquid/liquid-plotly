@@ -1,11 +1,8 @@
-include liquid_plotly/liquid_plotly.min.js
-include liquid_plotly/liquid_plotly.min.js.map
-include liquid_plotly/async-*.js
-include liquid_plotly/async-*.js.map
-include liquid_plotly/*-shared.js
-include liquid_plotly/*-shared.js.map
+include liquid_plotly/liquid_plotly.umd.js
+include liquid_plotly/style.css
 include liquid_plotly/metadata.json
 include liquid_plotly/package-info.json
+include assets/*
 include README.md
-include LICENSE
+include LICENSE.md
 include package.json
