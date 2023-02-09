@@ -7,6 +7,6 @@ styleElement.innerText = liquidStyles
 document.head.appendChild(styleElement)
 
 // @ts-ignore
-window.__LD_ASSET_PATH__ = `${window.location.origin}/liquid`
+window.__LD_ASSET_PATH__ = window.location.origin
 
 defineCustomElements()

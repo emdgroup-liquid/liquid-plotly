@@ -2,10 +2,22 @@ import { resolve } from 'path'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import replace from '@rollup/plugin-replace'
+import copy from 'rollup-plugin-copy'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    copy({
+      targets: [
+        {
+          src: 'node_modules/@emdgroup-liquid/liquid/dist/liquid/assets/*',
+          dest: 'assets',
+        },
+      ],
+      hook: 'buildStart',
+    }),
+    react(),
+  ],
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points

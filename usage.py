@@ -4,16 +4,16 @@ from dash import Dash, callback, html, Input, Output
 app = Dash(__name__)
 
 app.layout = html.Div([
-    ld.Typo(
-        children='''
-            Dash: A web application framework for your data.
-        '''
-    ),
     ld.Input(
         id='input',
-        value='my-value',
+        value='',
     ),
-    html.Div(id='output')
+    ld.Typo(
+        id='output',
+        children='''
+        '''
+    ),
+    ld.Icon(name='placeholder'),
 ])
 
 
