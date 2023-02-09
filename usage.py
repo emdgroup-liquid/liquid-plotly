@@ -4,6 +4,13 @@ from dash import Dash, callback, html, Input, Output
 app = Dash(__name__)
 
 app.layout = html.Div([
+    ld.Typo(
+        variant='b3',
+        tag='h1',
+        children='''
+            Liquid for Plotly
+        '''
+    ),
     ld.Input(
         id='input',
         value='',
