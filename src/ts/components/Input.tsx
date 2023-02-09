@@ -5,9 +5,13 @@ import { DashComponentProps } from '../props'
 import '../utils/init'
 
 type Props = {
+  /** Input tone. Use `'dark'` on white backgrounds. Default is a light tone. */
   tone?: string
+  /** Automatically focus the form control when the page is loaded. */
   autofocus?: Components.LdInput['autofocus']
+  /** Tab index of the input. */
   ldTabindex?: Components.LdInput['ldTabindex']
+  /** The input type. */
   type?: Components.LdInput['type']
 } & Omit<Components.LdInput, 'tone' | 'autofocus' | 'ldTabindex' | 'type'> &
   DashComponentProps
