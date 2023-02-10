@@ -4,12 +4,18 @@ import { LdInput } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../props'
 
 type Props = {
-  /** Input tone. Use `'dark'` on white backgrounds. Default is a light tone. */
-  tone?: string
+  /** Aria label. */
+  ariaLabel?: string
   /** Automatically focus the form control when the page is loaded. */
   autofocus?: Components.LdInput['autofocus']
+  /** CSS classes. */
+  className?: string
   /** Tab index of the input. */
   ldTabindex?: Components.LdInput['ldTabindex']
+  /** CSS styles. */
+  style?: React.CSSProperties
+  /** Input tone. Use `'dark'` on white backgrounds. Default is a light tone. */
+  tone?: string
   /** The input type. */
   type?: Components.LdInput['type']
 } & Omit<Components.LdInput, 'tone' | 'autofocus' | 'ldTabindex' | 'type'> &
@@ -26,6 +32,7 @@ const Input = (props: Props) => {
   return (
     <LdInput
       {...props}
+      aria-label={props.ariaLabel}
       onLdinput={onInput}
       tone={props.tone as 'dark' | undefined}
     />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdIcon } from '@emdgroup-liquid/liquid/dist/react'
+import { LdInputMessage } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../props'
 
 type Props = {
@@ -9,21 +9,21 @@ type Props = {
   /** CSS classes. */
   className?: string
   /** The actual content of the element. */
-  children?: string | JSX.Element
+  children: string | JSX.Element | JSX.Element[]
   /** CSS styles. */
   style?: React.CSSProperties
-} & Components.LdIcon &
+} & Components.LdInputMessage &
   DashComponentProps
 
 /**
- * {@link https://liquid.merck.design/liquid/components/ld-icon/ LdIcon}.
+ * {@link https://liquid.merck.design/liquid/components/ld-input-message/ LdInputMessage}.
  */
-const Icon = (props: Props) => {
+const InputMessage = (props: Props) => {
   return (
-    <LdIcon {...props} aria-label={props.ariaLabel}>
+    <LdInputMessage {...props} aria-label={props.ariaLabel}>
       {props.children}
-    </LdIcon>
+    </LdInputMessage>
   )
 }
 
-export default Icon
+export default InputMessage

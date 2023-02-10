@@ -16,7 +16,7 @@
   "homepage": "https://github.com/emdgroup-liquid/liquid-plotly",
   "main": "build/index.js",
   "scripts": {
-    "start": "run-p 'start:usage' 'watch'",
+    "start": "run-p 'watch' 'start:usage'",
     "start:usage": "python3 usage.py",
     "validate-init": "python _validate_init.py",
     "prepublishOnly": "npm run validate-init",
