@@ -30,6 +30,7 @@ Main = html.Main(
                     children='Liquid for Plotly Sandbox App'
                 ),
                 html.Div(
+                    style={ 'boxShadow': 'var(--ld-shadow-hover)' },
                     className='bg-white rounded-lg px-6 pb-6 pt-8',
                     children=[
                         ld.Typo(
@@ -52,7 +53,7 @@ Main = html.Main(
                             ]
                         ),
                         ld.Label(
-                            className='w-full mb-4',
+                            className='w-full mb-6',
                             children=[
                                 'Enter your name',
                                 ld.Input(
