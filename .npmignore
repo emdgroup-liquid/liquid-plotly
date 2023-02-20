@@ -18,6 +18,7 @@ yarn-error.log*
 # Development folders and files
 public
 src
+examples
 scripts
 config
 .travis.yml

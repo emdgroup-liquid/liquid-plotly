@@ -1,12 +1,16 @@
 import '@emdgroup-liquid/liquid/dist/css/liquid.global.css'
 
-import BgCells from './components/BgCells'
-import Button from './components/Button'
-import Icon from './components/Icon'
-import Input from './components/Input'
-import InputMessage from './components/InputMessage'
-import Label from './components/Label'
-import Typo from './components/Typo'
+import Accordion from './components/Accordion/Accordion'
+import AccordionPanel from './components/Accordion/AccordionPanel'
+import AccordionSection from './components/Accordion/AccordionSection'
+import AccordionToggle from './components/Accordion/AccordionToggle'
+import BgCells from './components/BgCells/BgCells'
+import Button from './components/Button/Button'
+import Icon from './components/Icon/Icon'
+import Input from './components/Input/Input'
+import InputMessage from './components/InputMessage/InputMessage'
+import Label from './components/Label/Label'
+import Typo from './components/Typo/Typo'
 
 import { defineCustomElements } from '@emdgroup-liquid/liquid/dist/loader'
 
@@ -15,4 +19,16 @@ window.__LD_ASSET_PATH__ = window.location.origin
 
 defineCustomElements()
 
-export { BgCells, Button, Icon, Input, InputMessage, Label, Typo }
+export {
+  Accordion,
+  AccordionPanel,
+  AccordionSection,
+  AccordionToggle,
+  BgCells,
+  Button,
+  Icon,
+  Input,
+  InputMessage,
+  Label,
+  Typo,
+}

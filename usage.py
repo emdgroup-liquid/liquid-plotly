@@ -1,6 +1,14 @@
+import sys
+import os
 import liquid_plotly as ld
 from dash import Dash, callback, html, Input, Output
 from dash_svg import Svg, Path
+from examples import accordion
+
+script_path = os.path.abspath(__file__)
+project_dir = os.path.dirname(script_path)
+examples_dir = os.path.join(project_dir, "examples")
+sys.path.append(examples_dir)
 
 # Do not use Tailwind like this in production!
 external_script = ["https://tailwindcss.com/", {"src": "https://cdn.tailwindcss.com"}]
@@ -42,6 +50,7 @@ Main = html.Main(
                                 " used in combination with Plotly Dash and Tailwind CSS.",
                             ],
                         ),
+                        # accordion.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
 import { LdIcon } from '@emdgroup-liquid/liquid/dist/react'
-import { DashComponentProps } from '../props'
+import { DashComponentProps } from '../../props'
 
 type Props = {
   /** Aria label. */
