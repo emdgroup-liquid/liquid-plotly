@@ -4,6 +4,7 @@ import Accordion from './components/Accordion/Accordion'
 import AccordionPanel from './components/Accordion/AccordionPanel'
 import AccordionSection from './components/Accordion/AccordionSection'
 import AccordionToggle from './components/Accordion/AccordionToggle'
+import Badge from './components/Badge/Badge'
 import BgCells from './components/BgCells/BgCells'
 import Button from './components/Button/Button'
 import Icon from './components/Icon/Icon'
@@ -24,6 +25,7 @@ export {
   AccordionPanel,
   AccordionSection,
   AccordionToggle,
+  Badge,
   BgCells,
   Button,
   Icon,

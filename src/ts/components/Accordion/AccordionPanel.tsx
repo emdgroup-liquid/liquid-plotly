@@ -8,11 +8,9 @@ type Props = {
   className?: string
   /** The actual content of the element. */
   children: string | JSX.Element | JSX.Element[]
-  /** Size of the label. Default is small. */
-  size?: string
   /** CSS styles. */
   style?: React.CSSProperties
-} & Components.LdAccordionPanel &
+} & Omit<Components.LdAccordionPanel, 'size'> &
   DashComponentProps
 
 /**
