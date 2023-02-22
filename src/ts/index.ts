@@ -6,7 +6,9 @@ import AccordionSection from './components/Accordion/AccordionSection'
 import AccordionToggle from './components/Accordion/AccordionToggle'
 import Badge from './components/Badge/Badge'
 import BgCells from './components/BgCells/BgCells'
+import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs'
 import Button from './components/Button/Button'
+import Crumb from './components/Breadcrumbs/Crumb'
 import Icon from './components/Icon/Icon'
 import Input from './components/Input/Input'
 import InputMessage from './components/InputMessage/InputMessage'
@@ -27,7 +29,9 @@ export {
   AccordionToggle,
   Badge,
   BgCells,
+  Breadcrumbs,
   Button,
+  Crumb,
   Icon,
   Input,
   InputMessage,

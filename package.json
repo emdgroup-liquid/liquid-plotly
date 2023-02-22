@@ -30,7 +30,7 @@
   "author": "User Experience Strategy & Design unit, part of the Chief Digital Organization at EMD Group <liquid@emdgroup.com> (https://github.com/emdgroup-liquid)",
   "license": "SEE LICENSE IN LICENSE.md",
   "dependencies": {
-    "@emdgroup-liquid/liquid": "^4.4.3"
+    "@emdgroup-liquid/liquid": "^4.7.0"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "^5.0.2",

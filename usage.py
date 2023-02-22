@@ -3,7 +3,7 @@ import os
 import liquid_plotly as ld
 from dash import Dash, callback, html, Input, Output
 from dash_svg import Svg, Path
-from examples import accordion, badge
+from examples import accordion, badge, breadcrumbs
 
 script_path = os.path.abspath(__file__)
 project_dir = os.path.dirname(script_path)
@@ -51,7 +51,8 @@ Main = html.Main(
                             ],
                         ),
                         # accordion.example(),
-                        badge.example(),
+                        # badge.example(),
+                        # breadcrumbs.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[
