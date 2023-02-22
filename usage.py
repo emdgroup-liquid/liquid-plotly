@@ -3,7 +3,7 @@ import os
 import liquid_plotly as ld
 from dash import Dash, callback, html, Input, Output
 from dash_svg import Svg, Path
-from examples import accordion, badge, breadcrumbs
+from examples import accordion, badge, breadcrumbs, cardstack
 
 script_path = os.path.abspath(__file__)
 project_dir = os.path.dirname(script_path)
@@ -31,9 +31,9 @@ Main = html.Main(
                     variant="b1",
                     children="Liquid for Plotly Sandbox App",
                 ),
-                html.Div(
-                    style={"boxShadow": "var(--ld-shadow-hover)"},
-                    className="bg-white rounded-lg px-6 pb-6 pt-8",
+                ld.Card(
+                    shadow="hover",
+                    className="",
                     children=[
                         ld.Typo(className="mb-4", variant="h2", children="Hi there 👋"),
                         ld.Typo(
@@ -53,6 +53,7 @@ Main = html.Main(
                         # accordion.example(),
                         # badge.example(),
                         # breadcrumbs.example(),
+                        # cardstack.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[

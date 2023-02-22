@@ -8,6 +8,8 @@ import Badge from './components/Badge/Badge'
 import BgCells from './components/BgCells/BgCells'
 import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs'
 import Button from './components/Button/Button'
+import Card from './components/Card/Card'
+import CardStack from './components/Card/CardStack'
 import Crumb from './components/Breadcrumbs/Crumb'
 import Icon from './components/Icon/Icon'
 import Input from './components/Input/Input'
@@ -31,6 +33,8 @@ export {
   BgCells,
   Breadcrumbs,
   Button,
+  Card,
+  CardStack,
   Crumb,
   Icon,
   Input,
