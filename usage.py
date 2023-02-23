@@ -3,7 +3,14 @@ import os
 import liquid_plotly as ld
 from dash import Dash, callback, html, Input, Output
 from dash_svg import Svg, Path
-from examples import accordion, badge, breadcrumbs, cardstack, checkbox
+from examples import (
+    accordion,
+    badge,
+    breadcrumbs,
+    cardstack,
+    checkbox,
+    circular_progress,
+)
 
 script_path = os.path.abspath(__file__)
 project_dir = os.path.dirname(script_path)
@@ -55,6 +62,7 @@ Main = html.Main(
                         # breadcrumbs.example(),
                         # cardstack.example(),
                         # checkbox.example(),
+                        # circular_progress.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[

@@ -11,11 +11,13 @@ import Button from './components/Button/Button'
 import Card from './components/Card/Card'
 import CardStack from './components/Card/CardStack'
 import Checkbox from './components/Checkbox/Checkbox'
+import CircularProgress from './components/CircularProgress/CircularProgress'
 import Crumb from './components/Breadcrumbs/Crumb'
 import Icon from './components/Icon/Icon'
 import Input from './components/Input/Input'
 import InputMessage from './components/InputMessage/InputMessage'
 import Label from './components/Label/Label'
+import SrOnly from './components/SrOnly/SrOnly'
 import Typo from './components/Typo/Typo'
 
 import { defineCustomElements } from '@emdgroup-liquid/liquid/dist/loader'
@@ -37,10 +39,12 @@ export {
   Card,
   CardStack,
   Checkbox,
+  CircularProgress,
   Crumb,
   Icon,
   Input,
   InputMessage,
   Label,
+  SrOnly,
   Typo,
 }
