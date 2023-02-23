@@ -13,6 +13,7 @@ import CardStack from './components/Card/CardStack'
 import Checkbox from './components/Checkbox/Checkbox'
 import CircularProgress from './components/CircularProgress/CircularProgress'
 import Crumb from './components/Breadcrumbs/Crumb'
+import Header from './components/Header/Header'
 import Icon from './components/Icon/Icon'
 import Input from './components/Input/Input'
 import InputMessage from './components/InputMessage/InputMessage'
@@ -41,6 +42,7 @@ export {
   Checkbox,
   CircularProgress,
   Crumb,
+  Header,
   Icon,
   Input,
   InputMessage,

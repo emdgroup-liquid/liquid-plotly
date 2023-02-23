@@ -10,6 +10,7 @@ from examples import (
     cardstack,
     checkbox,
     circular_progress,
+    header,
 )
 
 script_path = os.path.abspath(__file__)
@@ -63,6 +64,7 @@ Main = html.Main(
                         # cardstack.example(),
                         # checkbox.example(),
                         # circular_progress.example(),
+                        # header.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[
