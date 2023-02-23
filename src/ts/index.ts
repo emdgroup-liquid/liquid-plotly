@@ -18,6 +18,7 @@ import Icon from './components/Icon/Icon'
 import Input from './components/Input/Input'
 import InputMessage from './components/InputMessage/InputMessage'
 import Label from './components/Label/Label'
+import Link from './components/Link/Link'
 import SrOnly from './components/SrOnly/SrOnly'
 import Typo from './components/Typo/Typo'
 
@@ -47,6 +48,7 @@ export {
   Input,
   InputMessage,
   Label,
+  Link,
   SrOnly,
   Typo,
 }

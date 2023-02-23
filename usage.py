@@ -18,8 +18,11 @@ project_dir = os.path.dirname(script_path)
 examples_dir = os.path.join(project_dir, "examples")
 sys.path.append(examples_dir)
 
-# Do not use Tailwind like this in production!
-external_script = ["https://tailwindcss.com/", {"src": "https://cdn.tailwindcss.com"}]
+# Do not use unocss like this in production!
+external_script = [
+    "https://github.com/unocss/unocss/",
+    {"src": "https://cdn.jsdelivr.net/npm/@unocss/runtime"},
+]
 
 app = Dash(__name__, external_scripts=external_script)
 app.title = "Liquid – Sandbox App"
@@ -48,10 +51,8 @@ Main = html.Main(
                             className="mb-5",
                             children=[
                                 "This small sandbox app demonstrates ",
-                                html.A(
-                                    className="font-bold hover:underline",
+                                ld.Link(
                                     href="https://emdgroup-liquid.github.io/liquid/",
-                                    rel="noreferrer",
                                     children="Liquid Oxygen",
                                     target="_blank",
                                 ),
@@ -105,12 +106,12 @@ Footer = html.Footer(
                     children=[
                         "Checkout the source code on ",
                         html.A(
-                            className="font-bold hover:underline",
+                            className="font-bold text-white decoration-none ml-0.5",
                             href="https://github.com/emdgroup-liquid/liquid-plotly",
                             children=[
                                 "GitHub ",
                                 Svg(
-                                    className="inline-block ml-1 h-4 -mt-1 relative",
+                                    className="inline-block ml-1 h-4 translate-y-0.5 relative",
                                     fill="none",
                                     role="presentation",
                                     viewBox="0 0 18 18",
