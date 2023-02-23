@@ -10,9 +10,7 @@ type Props = {
   children: string | JSX.Element | JSX.Element[]
   /** CSS styles. */
   style?: React.CSSProperties
-  /** Tab index of the toggle. */
-  ldTabindex?: Components.LdAccordionToggle['ldTabindex']
-} & Omit<Components.LdAccordionToggle, 'ldTabindex'> &
+} & Components.LdAccordionToggle &
   DashComponentProps
 
 /**

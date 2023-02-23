@@ -7,18 +7,14 @@ type Props = {
   /** Aria label. */
   ariaLabel?: string
   /** Automatically focus the form control when the page is loaded. */
-  autofocus?: Components.LdInput['autofocus']
+  autofocus?: Components.LdButton['autofocus']
   /** CSS classes. */
   className?: string
   /** The actual content of the element. */
   children: string | JSX.Element | JSX.Element[]
-  /** Tab index of the input. */
-  ldTabindex?: Components.LdInput['ldTabindex']
   /** CSS styles. */
   style?: React.CSSProperties
-  /** The button type. */
-  type?: Components.LdButton['type']
-} & Omit<Components.LdButton, 'autofocus' | 'ldTabindex' | 'type'> &
+} & Omit<Components.LdButton, 'autofocus'> &
   DashComponentProps
 
 /**

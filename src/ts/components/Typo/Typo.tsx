@@ -12,11 +12,7 @@ type Props = {
   children: string | JSX.Element | JSX.Element[]
   /** CSS styles. */
   style?: React.CSSProperties
-  /** The rendered HTML tag. Overrides tag inferred from the variant. */
-  tag?: Components.LdTypo['tag']
-  /** The font style. Every variant has a default tag that it renders with. */
-  variant?: Components.LdTypo['variant']
-} & Omit<Components.LdTypo, 'ariaLabel' | 'tag' | 'variant'> &
+} & Omit<Components.LdTypo, 'ariaLabel'> &
   DashComponentProps
 
 /**
