@@ -5,10 +5,10 @@ def example():
     return ld.CardStack(
         className="mb-6",
         children=[
-            ld.Card("Card A"),
-            ld.Card("Card B"),
-            ld.Card("Card C"),
-            ld.Card("Card D"),
-            ld.Card("Card E"),
+            ld.Card(ld.Typo("Card A")),
+            ld.Card(ld.Typo("Card B")),
+            ld.Card(ld.Typo("Card C")),
+            ld.Card(ld.Typo("Card D")),
+            ld.Card(ld.Typo("Card E")),
         ],
     )
