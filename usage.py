@@ -13,6 +13,7 @@ from examples import (
     header,
     loading,
     modal,
+    notice,
 )
 
 script_path = os.path.abspath(__file__)
@@ -70,6 +71,7 @@ Main = html.Main(
                         # header.example(),
                         # loading.example(),
                         # modal.example(),
+                        # notice.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[

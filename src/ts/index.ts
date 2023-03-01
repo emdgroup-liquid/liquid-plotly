@@ -21,6 +21,7 @@ import Label from './components/Label/Label'
 import Link from './components/Link/Link'
 import Loading from './components/Loading/Loading'
 import Modal from './components/Modal/Modal'
+import Notice from './components/Notice/Notice'
 import SrOnly from './components/SrOnly/SrOnly'
 import Typo from './components/Typo/Typo'
 
@@ -53,6 +54,7 @@ export {
   Link,
   Loading,
   Modal,
+  Notice,
   SrOnly,
   Typo,
 }
