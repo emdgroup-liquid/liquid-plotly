@@ -19,6 +19,7 @@ import Input from './components/Input/Input'
 import InputMessage from './components/InputMessage/InputMessage'
 import Label from './components/Label/Label'
 import Link from './components/Link/Link'
+import Loading from './components/Loading/Loading'
 import SrOnly from './components/SrOnly/SrOnly'
 import Typo from './components/Typo/Typo'
 
@@ -49,6 +50,7 @@ export {
   InputMessage,
   Label,
   Link,
+  Loading,
   SrOnly,
   Typo,
 }

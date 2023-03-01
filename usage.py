@@ -11,6 +11,7 @@ from examples import (
     checkbox,
     circular_progress,
     header,
+    loading,
 )
 
 script_path = os.path.abspath(__file__)
@@ -66,6 +67,7 @@ Main = html.Main(
                         # checkbox.example(),
                         # circular_progress.example(),
                         # header.example(),
+                        # loading.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[
