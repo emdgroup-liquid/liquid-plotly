@@ -12,6 +12,7 @@ from examples import (
     circular_progress,
     header,
     loading,
+    modal,
 )
 
 script_path = os.path.abspath(__file__)
@@ -68,6 +69,7 @@ Main = html.Main(
                         # circular_progress.example(),
                         # header.example(),
                         # loading.example(),
+                        # modal.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[
