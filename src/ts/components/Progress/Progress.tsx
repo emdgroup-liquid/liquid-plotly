@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdCircularProgress } from '@emdgroup-liquid/liquid/dist/react'
+import { LdProgress } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -20,15 +20,15 @@ type Props = {
   children?: string | JSX.Element
   /** CSS styles. */
   style?: React.CSSProperties
-} & Components.LdCircularProgress &
+} & Components.LdProgress &
   DashComponentProps
 
 /**
- * {@link https://liquid.merck.design/liquid/components/ld-circular-progress/ LdCircularProgress}.
+ * {@link https://liquid.merck.design/liquid/components/ld-progress/ LdProgress}.
  */
-const CircularProgress = (props: Props) => {
+const Progress = (props: Props) => {
   return (
-    <LdCircularProgress
+    <LdProgress
       {...props}
       aria-label={props.ariaLabel}
       aria-labeled-by={props.ariaLabeledBy}
@@ -37,8 +37,8 @@ const CircularProgress = (props: Props) => {
       aria-value-now={props.ariaValueNow}
     >
       {props.children}
-    </LdCircularProgress>
+    </LdProgress>
   )
 }
 
-export default CircularProgress
+export default Progress

@@ -16,6 +16,7 @@ from examples import (
     notice,
     notification,
     pagination,
+    progress,
 )
 
 script_path = os.path.abspath(__file__)
@@ -80,7 +81,8 @@ Main = html.Main(
                         # modal.example(),
                         # notice.example(),
                         # notification.example(),
-                        pagination.example(),
+                        # pagination.example(),
+                        # progress.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[
