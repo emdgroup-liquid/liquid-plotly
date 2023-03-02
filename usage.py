@@ -15,6 +15,7 @@ from examples import (
     modal,
     notice,
     notification,
+    pagination,
 )
 
 script_path = os.path.abspath(__file__)
@@ -27,10 +28,16 @@ external_script = [
     "https://github.com/unocss/unocss/",
     {"src": "https://cdn.jsdelivr.net/npm/@unocss/runtime"},
 ]
-
 app = Dash(__name__, external_scripts=external_script)
 app.title = "Liquid – Sandbox App"
 app.scripts.config.serve_locally = True
+
+# Set meta tags.
+app.scripts.append_script(
+    {
+        "external_url": "/meta.js",
+    }
+)
 
 Main = html.Main(
     style={"minHeight": "80vh"},
@@ -38,7 +45,7 @@ Main = html.Main(
     children=[
         ld.BgCells(className="block absolute inset-0"),
         html.Div(
-            className="container mx-auto px-6 pt-10 pb-6 relative max-w-2xl",
+            className="mx-auto px-6 pt-10 pb-6 relative max-w-2xl",
             children=[
                 ld.Typo(
                     style={"color": "var(--ld-thm-warning)"},
@@ -48,7 +55,6 @@ Main = html.Main(
                 ),
                 ld.Card(
                     shadow="hover",
-                    className="",
                     children=[
                         ld.Typo(className="mb-4", variant="h2", children="Hi there 👋"),
                         ld.Typo(
@@ -74,6 +80,7 @@ Main = html.Main(
                         # modal.example(),
                         # notice.example(),
                         # notification.example(),
+                        pagination.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[
@@ -107,7 +114,7 @@ Footer = html.Footer(
     style={"backgroundColor": "var(--ld-thm-primary-active)"},
     children=[
         html.Div(
-            className="container text-center mx-auto px-12 pt-20 pb-24 max-w-2xl flex flex-col items-center justify-center",
+            className="text-center mx-auto px-12 pt-20 pb-24 max-w-2xl flex flex-col items-center justify-center",
             children=[
                 ld.Typo(
                     className="text-white mb-2",
@@ -155,8 +162,8 @@ Footer = html.Footer(
 )
 
 app.layout = html.Div(
-    style={"minWidth": "20rem"},
-    className="flex flex-col min-h-screen",
+    style={"minWidth": "23.75rem"},
+    className="flex flex-col min-h-screen overflow-x-hidden",
     children=[Main, Footer],
 )
 

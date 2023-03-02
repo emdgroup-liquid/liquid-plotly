@@ -1,31 +1,4 @@
 import '@emdgroup-liquid/liquid/dist/css/liquid.global.css'
-
-import Accordion from './components/Accordion/Accordion'
-import AccordionPanel from './components/Accordion/AccordionPanel'
-import AccordionSection from './components/Accordion/AccordionSection'
-import AccordionToggle from './components/Accordion/AccordionToggle'
-import Badge from './components/Badge/Badge'
-import BgCells from './components/BgCells/BgCells'
-import Breadcrumbs from './components/Breadcrumbs/Breadcrumbs'
-import Button from './components/Button/Button'
-import Card from './components/Card/Card'
-import CardStack from './components/Card/CardStack'
-import Checkbox from './components/Checkbox/Checkbox'
-import CircularProgress from './components/CircularProgress/CircularProgress'
-import Crumb from './components/Breadcrumbs/Crumb'
-import Header from './components/Header/Header'
-import Icon from './components/Icon/Icon'
-import Input from './components/Input/Input'
-import InputMessage from './components/InputMessage/InputMessage'
-import Label from './components/Label/Label'
-import Link from './components/Link/Link'
-import Loading from './components/Loading/Loading'
-import Modal from './components/Modal/Modal'
-import Notice from './components/Notice/Notice'
-import Notification from './components/Notification/Notification'
-import SrOnly from './components/SrOnly/SrOnly'
-import Typo from './components/Typo/Typo'
-
 import { defineCustomElements } from '@emdgroup-liquid/liquid/dist/loader'
 
 // @ts-ignore
@@ -33,30 +6,29 @@ window.__LD_ASSET_PATH__ = window.location.origin
 
 defineCustomElements()
 
-export {
-  Accordion,
-  AccordionPanel,
-  AccordionSection,
-  AccordionToggle,
-  Badge,
-  BgCells,
-  Breadcrumbs,
-  Button,
-  Card,
-  CardStack,
-  Checkbox,
-  CircularProgress,
-  Crumb,
-  Header,
-  Icon,
-  Input,
-  InputMessage,
-  Label,
-  Link,
-  Loading,
-  Modal,
-  Notice,
-  Notification,
-  SrOnly,
-  Typo,
-}
+export { default as Accordion } from './components/Accordion/Accordion'
+export { default as AccordionPanel } from './components/Accordion/AccordionPanel'
+export { default as AccordionSection } from './components/Accordion/AccordionSection'
+export { default as AccordionToggle } from './components/Accordion/AccordionToggle'
+export { default as Badge } from './components/Badge/Badge'
+export { default as BgCells } from './components/BgCells/BgCells'
+export { default as Breadcrumbs } from './components/Breadcrumbs/Breadcrumbs'
+export { default as Button } from './components/Button/Button'
+export { default as Card } from './components/Card/Card'
+export { default as CardStack } from './components/Card/CardStack'
+export { default as Checkbox } from './components/Checkbox/Checkbox'
+export { default as CircularProgress } from './components/CircularProgress/CircularProgress'
+export { default as Crumb } from './components/Breadcrumbs/Crumb'
+export { default as Header } from './components/Header/Header'
+export { default as Icon } from './components/Icon/Icon'
+export { default as Input } from './components/Input/Input'
+export { default as InputMessage } from './components/InputMessage/InputMessage'
+export { default as Label } from './components/Label/Label'
+export { default as Link } from './components/Link/Link'
+export { default as Loading } from './components/Loading/Loading'
+export { default as Modal } from './components/Modal/Modal'
+export { default as Notice } from './components/Notice/Notice'
+export { default as Notification } from './components/Notification/Notification'
+export { default as Pagination } from './components/Pagination/Pagination'
+export { default as SrOnly } from './components/SrOnly/SrOnly'
+export { default as Typo } from './components/Typo/Typo'

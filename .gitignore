@@ -295,6 +295,7 @@ src/*jl
 assets/*
 !assets/*.ico
 !assets/*.css
+!assets/*.js
 liquid_plotly/*.js
 liquid_plotly/*.css
 liquid_plotly/*.json
