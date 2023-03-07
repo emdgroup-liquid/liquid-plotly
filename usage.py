@@ -17,6 +17,7 @@ from examples import (
     notification,
     pagination,
     progress,
+    radio,
 )
 
 script_path = os.path.abspath(__file__)
@@ -83,6 +84,7 @@ Main = html.Main(
                         # notification.example(),
                         # pagination.example(),
                         # progress.example(),
+                        # radio.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[
@@ -192,7 +194,7 @@ def display_output(value):
 
 @callback(Output("click-counter", "children"), Input("button", "n_clicks"))
 def update_output(n_clicks):
-    if n_clicks == None:
+    if n_clicks is None:
         return ""
     if n_clicks == 1:
         return "Great! You've clicked the submit button. 👍"
