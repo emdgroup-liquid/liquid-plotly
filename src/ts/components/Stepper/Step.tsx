@@ -10,16 +10,18 @@ type Props = {
   className?: string
   /** The actual content of the element. */
   children?: string | JSX.Element
+  /** Step can be processed next. */
+  nextStep?: Components.LdStep['next']
   /** CSS styles. */
   style?: React.CSSProperties
-} & Components.LdStep &
+} & Omit<Components.LdStep, 'next'> &
   DashComponentProps
 
 /**
  * {@link https://liquid.merck.design/liquid/components/ld-stepper/ld-step/ LdStep}.
  */
 const Step = (props: Props) => {
-  const { setProps, ariaLabel, ...other } = props
+  const { setProps, ariaLabel, nextStep, ...other } = props
 
   const onClick = (ev) => {
     ev.preventDefault()
@@ -27,7 +29,7 @@ const Step = (props: Props) => {
   }
 
   return (
-    <LdStep onClick={onClick} {...other} aria-label={ariaLabel}>
+    <LdStep onClick={onClick} next={nextStep} aria-label={ariaLabel} {...other}>
       {props.children}
     </LdStep>
   )

@@ -7,7 +7,7 @@ def example():
         children=[
             ld.Step(done=True, children="Billing"),
             ld.Step(done=True, children="Shipping"),
-            ld.Step(current=True, next=True, lastActive=True, children="Payment"),
+            ld.Step(current=True, nextStep=True, lastActive=True, children="Payment"),
             ld.Step(disabled=True, children="Summary"),
             ld.Step(disabled=True, children="Confirmation"),
         ],

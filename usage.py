@@ -22,6 +22,7 @@ from examples import (
     slider,
     sr_live,
     stepper,
+    switch,
 )
 
 script_path = os.path.abspath(__file__)
@@ -93,6 +94,7 @@ Main = html.Main(
                         # slider.example(),
                         # sr_live.example(),
                         # stepper.example(),
+                        # switch.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[
