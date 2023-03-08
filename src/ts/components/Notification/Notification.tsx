@@ -6,8 +6,6 @@ import { DashComponentProps } from '../../props'
 type Props = {
   /** CSS classes. */
   className?: string
-  /** The actual content of the element. */
-  children?: string | JSX.Element
   /** The notification event to be dispatched. */
   event?: {
     name: 'ldNotificationAdd' | 'ldNotificationDismiss' | 'ldNotificationClear'
@@ -32,7 +30,7 @@ const Notification = (props: Props) => {
     dispatchEvent(new CustomEvent(ev.name, { detail: ev.detail }))
   }, [props.event])
 
-  return <LdNotification {...props}>{props.children}</LdNotification>
+  return <LdNotification {...props} />
 }
 
 export default Notification

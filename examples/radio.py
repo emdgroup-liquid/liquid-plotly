@@ -1,5 +1,5 @@
 import liquid_plotly as ld
-from dash import callback, html, Input, Output, ctx
+from dash import callback, html, Input, Output
 
 
 def example():
@@ -10,10 +10,9 @@ def example():
         prevent_initial_call=True,
     )
     def radio(checked_orange, checked_banana):
-        triggered_id = ctx.triggered_id
-        if triggered_id == "radio-orange" and checked_orange is True:
+        if checked_orange is True:
             return "Team chosen: Orange 🍊"
-        if triggered_id == "radio-banana" and checked_banana is True:
+        if checked_banana is True:
             return "Team chosen: Banana 🍌"
         return ""
 

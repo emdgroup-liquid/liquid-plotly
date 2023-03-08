@@ -18,6 +18,7 @@ from examples import (
     pagination,
     progress,
     radio,
+    sr_live,
 )
 
 script_path = os.path.abspath(__file__)
@@ -85,6 +86,7 @@ Main = html.Main(
                         # pagination.example(),
                         # progress.example(),
                         # radio.example(),
+                        # sr_live.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[

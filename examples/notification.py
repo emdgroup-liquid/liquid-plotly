@@ -1,11 +1,11 @@
 import liquid_plotly as ld
-from dash import callback, html, Input, Output, ctx
+from dash import callback, html, Input, Output
 
 
 def example():
     @callback(
         Output("notification", "event"),
-        Input("notify", "n_clicks"),
+        Input("notification-trigger", "n_clicks"),
         prevent_initial_call=True,
     )
     def show_notification(n_clicks):
@@ -21,7 +21,7 @@ def example():
     return html.Div(
         children=[
             ld.Button(
-                id="notify",
+                id="notification-trigger",
                 className="mb-6",
                 children="Show notification",
             ),
