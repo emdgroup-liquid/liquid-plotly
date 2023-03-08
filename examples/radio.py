@@ -24,7 +24,9 @@ def example():
                 size="m",
                 children=[
                     "Orange",
-                    ld.Radio(id="radio-orange", name="team", value="oragne"),
+                    ld.Radio(
+                        id="radio-orange", name="team", value="oragne", tone="dark"
+                    ),
                     ld.InputMessage(
                         mode="info", children="You'll join the orange team."
                     ),
@@ -35,7 +37,9 @@ def example():
                 size="m",
                 children=[
                     "Banana",
-                    ld.Radio(id="radio-banana", name="team", value="banana"),
+                    ld.Radio(
+                        id="radio-banana", name="team", value="banana", tone="dark"
+                    ),
                     ld.InputMessage(
                         mode="info", children="You'll join the banana team."
                     ),

@@ -18,6 +18,7 @@ from examples import (
     pagination,
     progress,
     radio,
+    select,
     sr_live,
 )
 
@@ -33,7 +34,6 @@ external_script = [
 ]
 app = Dash(__name__, external_scripts=external_script)
 app.title = "Liquid – Sandbox App"
-app.scripts.config.serve_locally = True
 
 # Set meta tags.
 app.scripts.append_script(
@@ -72,6 +72,7 @@ Main = html.Main(
                                 " used in combination with Plotly Dash and Tailwind CSS.",
                             ],
                         ),
+                        # Uncomment examples below to see them in action.
                         # accordion.example(),
                         # badge.example(),
                         # breadcrumbs.example(),
@@ -87,12 +88,14 @@ Main = html.Main(
                         # progress.example(),
                         # radio.example(),
                         # sr_live.example(),
+                        # select.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[
                                 "Enter your name",
                                 ld.Input(
                                     id="input",
+                                    tone="dark",
                                     value="",
                                 ),
                                 ld.InputMessage(
