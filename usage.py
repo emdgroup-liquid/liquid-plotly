@@ -19,6 +19,7 @@ from examples import (
     progress,
     radio,
     select,
+    slider,
     sr_live,
 )
 
@@ -89,6 +90,7 @@ Main = html.Main(
                         # radio.example(),
                         # sr_live.example(),
                         # select.example(),
+                        # slider.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[

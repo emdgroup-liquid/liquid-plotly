@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdSelect } from '@emdgroup-liquid/liquid/dist/react'
+import { LdSlider } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
   /** Aria label. */
   ariaLabel?: string
-  /** Automatically focus the form control when the page is loaded. */
-  autofocus?: Components.LdSelect['autofocus']
+  /** Aria disabled. */
+  ariaDisabled?: boolean
   /** CSS classes. */
   className?: string
   /** The actual content of the element. */
@@ -15,29 +15,28 @@ type Props = {
   /** CSS styles. */
   style?: React.CSSProperties
   /** Tab index of the form control. */
-  ldTabindex?: Components.LdSelect['ldTabindex']
-} & Omit<Components.LdSelect, 'autofocus' | 'ldTabindex'> &
+  ldTabindex?: Components.LdSlider['ldTabindex']
+} & Omit<Components.LdSlider, 'ldTabindex' | 'ariaDisabled'> &
   DashComponentProps
 
 /**
- * {@link https://liquid.merck.design/liquid/components/ld-select/ LdSelect}.
+ * {@link https://liquid.merck.design/liquid/components/ld-slider/ LdSlider}.
  */
-const Select = (props: Props) => {
-  const { setProps, ariaLabel, ...other } = props
+const Slider = (props: Props) => {
+  const { setProps, ariaLabel, ariaDisabled, ...other } = props
 
   const handleChange = (ev) => {
     setProps({ value: ev.detail })
   }
 
   return (
-    <LdSelect
+    <LdSlider
       onLdchange={(ev) => handleChange(ev)}
+      aria-disabled={ariaDisabled}
       aria-label={ariaLabel}
       {...other}
-    >
-      {props.children}
-    </LdSelect>
+    />
   )
 }
 
-export default Select
+export default Slider
