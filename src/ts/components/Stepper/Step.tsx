@@ -1,26 +1,24 @@
 import React, { Component } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdButton } from '@emdgroup-liquid/liquid/dist/react'
+import { LdStep } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
   /** Aria label. */
   ariaLabel?: string
-  /** Automatically focus the form control when the page is loaded. */
-  autofocus?: Components.LdButton['autofocus']
   /** CSS classes. */
   className?: string
   /** The actual content of the element. */
-  children: string | JSX.Element | JSX.Element[]
+  children?: string | JSX.Element
   /** CSS styles. */
   style?: React.CSSProperties
-} & Omit<Components.LdButton, 'autofocus'> &
+} & Components.LdStep &
   DashComponentProps
 
 /**
- * {@link https://liquid.merck.design/liquid/components/ld-button/ LdButton}.
+ * {@link https://liquid.merck.design/liquid/components/ld-stepper/ld-step/ LdStep}.
  */
-const Button = (props: Props) => {
+const Step = (props: Props) => {
   const { setProps, ariaLabel, ...other } = props
 
   const onClick = (ev) => {
@@ -29,10 +27,10 @@ const Button = (props: Props) => {
   }
 
   return (
-    <LdButton onClick={onClick} {...other} aria-label={ariaLabel}>
+    <LdStep onClick={onClick} {...other} aria-label={ariaLabel}>
       {props.children}
-    </LdButton>
+    </LdStep>
   )
 }
 
-export default Button
+export default Step

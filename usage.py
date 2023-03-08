@@ -21,6 +21,7 @@ from examples import (
     select,
     slider,
     sr_live,
+    stepper,
 )
 
 script_path = os.path.abspath(__file__)
@@ -88,9 +89,10 @@ Main = html.Main(
                         # pagination.example(),
                         # progress.example(),
                         # radio.example(),
-                        # sr_live.example(),
                         # select.example(),
                         # slider.example(),
+                        # sr_live.example(),
+                        # stepper.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[
