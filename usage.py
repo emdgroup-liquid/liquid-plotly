@@ -23,6 +23,7 @@ from examples import (
     sr_live,
     stepper,
     switch,
+    table,
 )
 
 script_path = os.path.abspath(__file__)
@@ -95,6 +96,7 @@ Main = html.Main(
                         # sr_live.example(),
                         # stepper.example(),
                         # switch.example(),
+                        # table.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[
