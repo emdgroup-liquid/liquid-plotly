@@ -25,6 +25,7 @@ from examples import (
     switch,
     table,
     tabs,
+    toggle,
 )
 
 script_path = os.path.abspath(__file__)
@@ -74,7 +75,7 @@ Main = html.Main(
                                     children="Liquid Oxygen",
                                     target="_blank",
                                 ),
-                                " used in combination with Plotly Dash and Tailwind CSS.",
+                                " used in combination with Plotly Dash and UnoCSS.",
                             ],
                         ),
                         # Uncomment examples below to see them in action.
@@ -99,6 +100,7 @@ Main = html.Main(
                         # switch.example(),
                         # table.example(),
                         # tabs.example(),
+                        # toggle.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[
