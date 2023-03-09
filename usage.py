@@ -26,6 +26,7 @@ from examples import (
     table,
     tabs,
     toggle,
+    tooltip,
 )
 
 script_path = os.path.abspath(__file__)
@@ -101,6 +102,7 @@ Main = html.Main(
                         # table.example(),
                         # tabs.example(),
                         # toggle.example(),
+                        # tooltip.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[

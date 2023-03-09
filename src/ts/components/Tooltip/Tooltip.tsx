@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdBadge } from '@emdgroup-liquid/liquid/dist/react'
+import { LdTooltip } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -10,26 +10,26 @@ type Props = {
   className?: string
   /** The actual content of the element. */
   children?: string | JSX.Element
-  /** Size of the badge. Default is small. */
+  /** Size of the tooltip. Default is medium. */
   size?: string
   /** CSS styles. */
   style?: React.CSSProperties
-} & Omit<Components.LdBadge, 'size'> &
+} & Omit<Components.LdTooltip, 'size'> &
   DashComponentProps
 
 /**
- * {@link https://liquid.merck.design/liquid/components/ld-badge/ LdBadge}.
+ * {@link https://liquid.merck.design/liquid/components/ld-tooltip/ LdTooltip}.
  */
-const Badge = (props: Props) => {
+const Tooltip = (props: Props) => {
   return (
-    <LdBadge
+    <LdTooltip
       {...props}
       aria-label={props.ariaLabel}
-      size={props.size as Components.LdBadge['size']}
+      size={props.size as Components.LdTooltip['size']}
     >
       {props.children}
-    </LdBadge>
+    </LdTooltip>
   )
 }
 
-export default Badge
+export default Tooltip
