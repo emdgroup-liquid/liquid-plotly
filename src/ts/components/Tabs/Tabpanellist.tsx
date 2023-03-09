@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdCrumb } from '@emdgroup-liquid/liquid/dist/react'
+import { LdTabpanellist } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -12,24 +12,18 @@ type Props = {
   children?: string | JSX.Element
   /** CSS styles. */
   style?: React.CSSProperties
-} & Components.LdCrumb &
+} & Components.LdTabpanellist &
   DashComponentProps
 
 /**
- * {@link https://liquid.merck.design/liquid/components/ld-breadcrumbs/ld-crumb/ LdCrumb}.
+ * {@link https://liquid.merck.design/liquid/components/ld-tabs/ld-tabpanellist/ LdTabpanellist}.
  */
-const Crumb = (props: Props) => {
-  const { setProps, ariaLabel, ...other } = props
-
-  const onClick = (ev) => {
-    setProps({ n_clicks: (props['n_clicks'] || 0) + 1 })
-  }
-
+const Tabpanellist = (props: Props) => {
   return (
-    <LdCrumb onClick={onClick} aria-label={ariaLabel} {...other}>
+    <LdTabpanellist {...props} aria-label={props.ariaLabel}>
       {props.children}
-    </LdCrumb>
+    </LdTabpanellist>
   )
 }
 
-export default Crumb
+export default Tabpanellist

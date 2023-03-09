@@ -24,6 +24,7 @@ from examples import (
     stepper,
     switch,
     table,
+    tabs,
 )
 
 script_path = os.path.abspath(__file__)
@@ -97,6 +98,7 @@ Main = html.Main(
                         # stepper.example(),
                         # switch.example(),
                         # table.example(),
+                        # tabs.example(),
                         ld.Label(
                             className="w-full mb-6",
                             children=[

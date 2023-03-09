@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdStep } from '@emdgroup-liquid/liquid/dist/react'
+import { LdTab } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -10,28 +10,26 @@ type Props = {
   className?: string
   /** The actual content of the element. */
   children?: string | JSX.Element
-  /** Step can be processed next. */
-  nextStep?: Components.LdStep['next']
   /** CSS styles. */
   style?: React.CSSProperties
-} & Omit<Components.LdStep, 'next'> &
+} & Components.LdTab &
   DashComponentProps
 
 /**
- * {@link https://liquid.merck.design/liquid/components/ld-stepper/ld-step/ LdStep}.
+ * {@link https://liquid.merck.design/liquid/components/ld-tabs/ld-tab/ LdTab}.
  */
-const Step = (props: Props) => {
-  const { setProps, ariaLabel, nextStep, ...other } = props
+const Tab = (props: Props) => {
+  const { setProps, ariaLabel, ...other } = props
 
   const onClick = (ev) => {
     setProps({ n_clicks: (props['n_clicks'] || 0) + 1 })
   }
 
   return (
-    <LdStep onClick={onClick} next={nextStep} aria-label={ariaLabel} {...other}>
+    <LdTab onClick={onClick} aria-label={ariaLabel} {...other}>
       {props.children}
-    </LdStep>
+    </LdTab>
   )
 }
 
-export default Step
+export default Tab
