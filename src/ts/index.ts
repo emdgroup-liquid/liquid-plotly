@@ -2,7 +2,7 @@ import '@emdgroup-liquid/liquid/dist/css/liquid.global.css'
 import { defineCustomElements } from '@emdgroup-liquid/liquid/dist/loader'
 
 // @ts-ignore
-window.__LD_ASSET_PATH__ = window.location.origin
+//window.__LD_ASSET_PATH__ = window.location.origin
 
 defineCustomElements()
 

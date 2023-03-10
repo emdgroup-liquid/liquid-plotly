@@ -42,13 +42,13 @@
     ```bash
     python setup.py sdist bdist_wheel
     ```
-    This will create source and wheel distribution in the generated the `dist/` folder.
+    This will create source and wheel distribution in the generated `dist/` folder.
     See [PyPA](https://packaging.python.org/guides/distributing-packages-using-setuptools/#packaging-your-project)
     for more information.
 
 3. Test your tarball by copying it into a new environment and installing it locally:
     ```bash
-    pip install liquid_plotly-1.0.0.tar.gz
+    pip install liquid_plotly-0.0.0.tar.gz
     ```
 
 4. If it works, then you can publish the component to NPM and PyPI:

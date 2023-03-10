@@ -1,8 +1,6 @@
-include liquid_plotly/liquid_plotly.umd.js
-include liquid_plotly/style.css
-include liquid_plotly/metadata.json
-include liquid_plotly/package-info.json
+recursive-include liquid_plotly/** *.js *.css *.json *.html *.svg
 include assets/*
+prune tests
 include README.md
 include LICENSE.md
 include package.json
