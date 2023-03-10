@@ -9,8 +9,10 @@ Check out the [list of available components](https://github.com/emdgroup-liquid/
 
 Get started with:
 1. Install Dash and its dependencies: https://dash.plotly.com/installation
-2. Run `python usage.py`
-3. Visit http://localhost:8050 in your web browser
+2. Install Liquid Plotly with `pip install liquid-plotly`
+3. Import Liquid Plotly with `import liquid_plotly as ld`
+
+Usage examples can be found [here](https://github.com/emdgroup-liquid/liquid-plotly/blob/main/usage.py) and [here](https://github.com/emdgroup-liquid/liquid-plotly/tree/main/examples). Refer to the [Liquid Oxygen docs](https://liquid.merck.design/liquid/) for information on all component properties.
 
 ## License
 
