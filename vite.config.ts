@@ -2,22 +2,10 @@ import { resolve } from 'path'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import replace from '@rollup/plugin-replace'
-import copy from 'rollup-plugin-copy'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    copy({
-      targets: [
-        {
-          src: 'node_modules/@emdgroup-liquid/liquid/dist/liquid/assets/*',
-          dest: 'assets',
-        },
-      ],
-      hook: 'buildStart',
-    }),
-    react(),
-  ],
+  plugins: [react()],
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
@@ -30,7 +18,7 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['react'],
+      external: ['react', '@emdgroup-liquid/liquid'],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps

@@ -1,10 +1,13 @@
 import '@emdgroup-liquid/liquid/dist/css/liquid.global.css'
-import { defineCustomElements } from '@emdgroup-liquid/liquid/dist/loader'
+import { dependencies } from '../../package.json'
 
-// @ts-ignore
-//window.__LD_ASSET_PATH__ = window.location.origin
-
-defineCustomElements()
+const script = document.createElement('script')
+script.type = 'module'
+script.innerText = `
+  import { defineCustomElements } from "https://cdn.jsdelivr.net/npm/@emdgroup-liquid/liquid@${dependencies['@emdgroup-liquid/liquid']}/dist/loader/index.js";
+  defineCustomElements();
+`
+document.head.append(script)
 
 export { default as Accordion } from './components/Accordion/Accordion'
 export { default as AccordionPanel } from './components/Accordion/AccordionPanel'

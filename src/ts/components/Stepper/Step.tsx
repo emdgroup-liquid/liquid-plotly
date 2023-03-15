@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdStep } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -21,16 +20,23 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-stepper/ld-step/ LdStep}.
  */
 const Step = (props: Props) => {
-  const { setProps, ariaLabel, nextStep, ...other } = props
+  const { setProps, ariaLabel, nextStep, lastActive, ...other } = props
 
   const onClick = (ev) => {
     setProps({ n_clicks: (props['n_clicks'] || 0) + 1 })
   }
 
   return (
-    <LdStep onClick={onClick} next={nextStep} aria-label={ariaLabel} {...other}>
+    <ld-step
+      class={props.className}
+      onClick={onClick}
+      next={nextStep}
+      last-active={lastActive}
+      aria-label={ariaLabel}
+      {...other}
+    >
       {props.children}
-    </LdStep>
+    </ld-step>
   )
 }
 

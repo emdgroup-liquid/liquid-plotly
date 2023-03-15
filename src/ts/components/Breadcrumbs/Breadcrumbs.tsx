@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdBreadcrumbs } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -20,9 +19,13 @@ type Props = {
  */
 const Breadcrumbs = (props: Props) => {
   return (
-    <LdBreadcrumbs {...props} aria-label={props.ariaLabel}>
+    <ld-breadcrumbs
+      class={props.className}
+      {...props}
+      aria-label={props.ariaLabel}
+    >
       {props.children}
-    </LdBreadcrumbs>
+    </ld-breadcrumbs>
   )
 }
 

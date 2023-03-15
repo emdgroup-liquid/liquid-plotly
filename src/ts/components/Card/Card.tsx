@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdCard } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -20,9 +19,13 @@ type Props = {
  */
 const Card = (props: Props) => {
   return (
-    <LdCard {...props} size={props.size as Components.LdCard['size']}>
+    <ld-card
+      class={props.className}
+      {...props}
+      size={props.size as Components.LdCard['size']}
+    >
       {props.children}
-    </LdCard>
+    </ld-card>
   )
 }
 

@@ -1,6 +1,5 @@
 import React, { Component, useEffect, useRef } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdRadio } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -21,10 +20,15 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-radio/ LdRadio}.
  */
 const Radio = (props: Props) => {
-  const { setProps, ariaLabel, tone, ...other } = props
+  const { setProps, ariaLabel, tone, name, ...other } = props
 
-  const handleChange = (checked: boolean) => {
-    setProps({ checked })
+  const handleHydration = () => {
+    hydrationObserver.disconnect()
+    observer.observe(radioRef.current.shadowRoot, {
+      subtree: true,
+      childList: false,
+      attributes: true,
+    })
   }
 
   const handleMutation = (ev) => {
@@ -34,28 +38,40 @@ const Radio = (props: Props) => {
     }
   }
 
+  const hydrationObserver = new MutationObserver(handleHydration)
+  const observer = new MutationObserver(handleMutation)
+
   const radioRef = useRef<HTMLLdRadioElement>()
 
+  const handleChange = (ev: CustomEvent<boolean>) => {
+    updateProps(ev.detail)
+  }
+
+  const updateProps = (checked: boolean) => {
+    setProps({ checked })
+  }
+
   useEffect(() => {
-    const observer = new MutationObserver(handleMutation)
-    observer.observe(radioRef.current.shadowRoot, {
-      subtree: true,
+    radioRef.current.addEventListener('ldchange', handleChange)
+    hydrationObserver.observe(radioRef.current, {
+      subtree: false,
       childList: false,
       attributes: true,
     })
     return () => {
       observer.disconnect()
+      radioRef.current.removeEventListener('ldchange', handleChange)
     }
   }, [])
 
   return (
-    <LdRadio
-      onLdchange={(ev) => handleChange(ev.detail)}
+    <ld-radio
       ref={radioRef}
       aria-label={ariaLabel}
       tone={tone as 'dark' | undefined}
+      name={name || ''}
       {...other}
-    ></LdRadio>
+    ></ld-radio>
   )
 }
 

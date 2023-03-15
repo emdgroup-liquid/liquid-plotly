@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdNotice } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -17,7 +16,13 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-notice/ LdNotice}.
  */
 const Notice = (props: Props) => {
-  return <LdNotice {...props}>{props.children}</LdNotice>
+  const { className, children, ...other } = props
+
+  return (
+    <ld-notice class={className} {...other}>
+      {children}
+    </ld-notice>
+  )
 }
 
 export default Notice

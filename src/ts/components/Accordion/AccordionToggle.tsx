@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdAccordionToggle } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -16,8 +15,12 @@ type Props = {
 /**
  * {@link https://liquid.merck.design/liquid/components/ld-accordion/ld-accordion-toggle/ LdAccordionToggle}.
  */
-const Label = (props: Props) => {
-  return <LdAccordionToggle {...props}>{props.children}</LdAccordionToggle>
+const AccordionToggle = (props: Props) => {
+  return (
+    <ld-accordion-toggle class={props.className} {...props}>
+      {props.children}
+    </ld-accordion-toggle>
+  )
 }
 
-export default Label
+export default AccordionToggle

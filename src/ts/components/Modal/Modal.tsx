@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdModal } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -19,7 +18,13 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-modal/ LdModal}.
  */
 const Modal = (props: Props) => {
-  return <LdModal {...props}>{props.children}</LdModal>
+  const { className, children, ...other } = props
+
+  return (
+    <ld-modal class={className} {...other}>
+      {children}
+    </ld-modal>
+  )
 }
 
 export default Modal

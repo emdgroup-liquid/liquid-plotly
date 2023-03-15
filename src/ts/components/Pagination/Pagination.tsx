@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdPagination } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -17,15 +16,31 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-pagination/ LdPagination}.
  */
 const Pagination = (props: Props) => {
-  const updateProps = (ev) => {
-    props.setProps({ selectedIndex: ev.detail })
+  const { setProps, className, ariaLabel, ...other } = props
+
+  const paginationRef = useRef<HTMLLdPaginationElement>()
+
+  useEffect(() => {
+    paginationRef.current.addEventListener('ldchange', handleChange)
+    return () => {
+      paginationRef.current.removeEventListener('ldchange', handleChange)
+    }
+  })
+
+  const handleChange = (ev: CustomEvent<number>) => {
+    updateProps(ev.detail)
+  }
+
+  const updateProps = (selectedIndex: number) => {
+    setProps({ selectedIndex })
   }
 
   return (
-    <LdPagination
-      onLdchange={updateProps}
-      {...props}
-      aria-label={props.ariaLabel}
+    <ld-pagination
+      class={className}
+      ref={paginationRef}
+      aria-label={ariaLabel}
+      {...other}
     />
   )
 }

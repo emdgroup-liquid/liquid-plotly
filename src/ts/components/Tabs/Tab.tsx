@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdTab } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -19,16 +18,21 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-tabs/ld-tab/ LdTab}.
  */
 const Tab = (props: Props) => {
-  const { setProps, ariaLabel, ...other } = props
+  const { setProps, className, ariaLabel, ...other } = props
 
   const onClick = (ev) => {
     setProps({ n_clicks: (props['n_clicks'] || 0) + 1 })
   }
 
   return (
-    <LdTab onClick={onClick} aria-label={ariaLabel} {...other}>
+    <ld-tab
+      class={className}
+      onClick={onClick}
+      aria-label={ariaLabel}
+      {...other}
+    >
       {props.children}
-    </LdTab>
+    </ld-tab>
   )
 }
 

@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdCheckbox } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -21,19 +20,33 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-checkbox/ LdCheckbox}.
  */
 const Checkbox = (props: Props) => {
-  const { setProps, ariaLabel, tone, ...other } = props
+  const { setProps, className, ariaLabel, tone, ...other } = props
+
+  const checkboxRef = useRef<HTMLLdCheckboxElement>()
+
+  useEffect(() => {
+    checkboxRef.current.addEventListener('ldchange', handleChange)
+    return () => {
+      checkboxRef.current.removeEventListener('ldchange', handleChange)
+    }
+  })
+
+  const handleChange = (ev: CustomEvent<boolean>) => {
+    updateProps(ev.detail)
+  }
 
   const updateProps = (checked: boolean) => {
     setProps({ checked })
   }
 
   return (
-    <LdCheckbox
-      onLdchange={(ev) => updateProps(ev.detail)}
+    <ld-checkbox
+      ref={checkboxRef}
+      class={className}
       aria-label={ariaLabel}
       tone={tone as 'dark' | undefined}
       {...other}
-    ></LdCheckbox>
+    ></ld-checkbox>
   )
 }
 

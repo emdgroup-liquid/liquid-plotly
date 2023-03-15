@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdInputMessage } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -20,9 +19,13 @@ type Props = {
  */
 const InputMessage = (props: Props) => {
   return (
-    <LdInputMessage {...props} aria-label={props.ariaLabel}>
+    <ld-input-message
+      class={props.className}
+      {...props}
+      aria-label={props.ariaLabel}
+    >
       {props.children}
-    </LdInputMessage>
+    </ld-input-message>
   )
 }
 

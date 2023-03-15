@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdStepper } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -20,9 +19,9 @@ type Props = {
  */
 const Stepper = (props: Props) => {
   return (
-    <LdStepper {...props} aria-label={props.ariaLabel}>
+    <ld-stepper class={props.className} {...props} aria-label={props.ariaLabel}>
       {props.children}
-    </LdStepper>
+    </ld-stepper>
   )
 }
 

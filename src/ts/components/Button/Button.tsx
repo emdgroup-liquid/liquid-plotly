@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdButton } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -29,9 +28,14 @@ const Button = (props: Props) => {
   }
 
   return (
-    <LdButton onClick={onClick} {...other} aria-label={ariaLabel}>
+    <ld-button
+      class={props.className}
+      onClick={onClick}
+      {...other}
+      aria-label={ariaLabel}
+    >
       {props.children}
-    </LdButton>
+    </ld-button>
   )
 }
 

@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdCircularProgress } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -9,11 +8,11 @@ type Props = {
   /** Aria labeled by. */
   ariaLabeledBy?: string
   /** Aria value max. */
-  ariaValueMax?: string
+  ariaValueMax?: number
   /** Aria value min. */
-  ariaValueMin?: string
+  ariaValueMin?: number
   /** Aria value now. */
-  ariaValueNow?: string
+  ariaValueNow?: number
   /** CSS classes. */
   className?: string
   /** The actual content of the element. */
@@ -27,17 +26,28 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-circular-progress/ LdCircularProgress}.
  */
 const CircularProgress = (props: Props) => {
+  const {
+    className,
+    ariaLabel,
+    ariaLabeledBy,
+    ariaValueMax,
+    ariaValueMin,
+    ariaValueNow,
+    children,
+    ...other
+  } = props
+
   return (
-    <LdCircularProgress
-      {...props}
-      aria-label={props.ariaLabel}
-      aria-labeled-by={props.ariaLabeledBy}
-      aria-value-max={props.ariaValueMax}
-      aria-value-min={props.ariaValueMin}
-      aria-value-now={props.ariaValueNow}
+    <ld-circular-progress
+      {...other}
+      aria-label={ariaLabel}
+      aria-labeled-by={ariaLabeledBy}
+      aria-valuemax={ariaValueMax}
+      aria-valuemin={ariaValueMin}
+      aria-valuenow={ariaValueNow}
     >
-      {props.children}
-    </LdCircularProgress>
+      {children}
+    </ld-circular-progress>
   )
 }
 

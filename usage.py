@@ -39,15 +39,12 @@ external_script = [
     "https://github.com/unocss/unocss/",
     {"src": "https://cdn.jsdelivr.net/npm/@unocss/runtime"},
 ]
-app = Dash(__name__, external_scripts=external_script)
-app.title = "Liquid – Sandbox App"
-
-# Set meta tags.
-app.scripts.append_script(
-    {
-        "external_url": "/meta.js",
-    }
+app = Dash(
+    __name__,
+    external_scripts=external_script,
+    meta_tags=[{"viewport": "width=device-width, initial-scale=1, viewport-fit=cover"}],
 )
+app.title = "Liquid – Sandbox App"
 
 Main = html.Main(
     style={"minHeight": "80vh"},

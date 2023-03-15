@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdSelect } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -23,20 +22,30 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-select/ LdSelect}.
  */
 const Select = (props: Props) => {
-  const { setProps, ariaLabel, ...other } = props
+  const { setProps, className, ariaLabel, ...other } = props
 
-  const handleChange = (ev) => {
+  const selectRef = useRef<HTMLLdSelectElement>()
+
+  const handleChange = (ev: CustomEvent<string | string[]>) => {
     setProps({ value: ev.detail })
   }
 
+  useEffect(() => {
+    selectRef.current.addEventListener('ldchange', handleChange)
+    return () => {
+      selectRef.current.removeEventListener('ldchange', handleChange)
+    }
+  }, [])
+
   return (
-    <LdSelect
-      onLdchange={(ev) => handleChange(ev)}
+    <ld-select
+      ref={selectRef}
+      class={className}
       aria-label={ariaLabel}
       {...other}
     >
       {props.children}
-    </LdSelect>
+    </ld-select>
   )
 }
 

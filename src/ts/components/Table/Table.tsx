@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdTable } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -20,9 +19,9 @@ type Props = {
  */
 const Table = (props: Props) => {
   return (
-    <LdTable {...props} aria-label={props.ariaLabel}>
+    <ld-table class={props.className} {...props} aria-label={props.ariaLabel}>
       {props.children}
-    </LdTable>
+    </ld-table>
   )
 }
 

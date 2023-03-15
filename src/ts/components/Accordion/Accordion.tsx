@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdAccordion } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -20,16 +19,17 @@ type Props = {
 /**
  * {@link https://liquid.merck.design/liquid/components/ld-accordion/ LdAccordion}.
  */
-const Label = (props: Props) => {
+const Accordion = (props: Props) => {
   return (
-    <LdAccordion
+    <ld-accordion
+      class={props.className}
       {...props}
       tone={props.tone as 'dark' | undefined}
       aria-label={props.ariaLabel}
     >
       {props.children}
-    </LdAccordion>
+    </ld-accordion>
   )
 }
 
-export default Label
+export default Accordion

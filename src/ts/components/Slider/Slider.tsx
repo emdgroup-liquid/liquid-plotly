@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdSlider } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -23,15 +22,25 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-slider/ LdSlider}.
  */
 const Slider = (props: Props) => {
-  const { setProps, ariaLabel, ariaDisabled, ...other } = props
+  const { setProps, className, ariaLabel, ariaDisabled, ...other } = props
+
+  const sliderRef = useRef<HTMLLdSliderElement>()
 
   const handleChange = (ev) => {
     setProps({ value: ev.detail })
   }
 
+  useEffect(() => {
+    sliderRef.current.addEventListener('ldchange', handleChange)
+    return () => {
+      sliderRef.current.removeEventListener('ldchange', handleChange)
+    }
+  }, [])
+
   return (
-    <LdSlider
-      onLdchange={(ev) => handleChange(ev)}
+    <ld-slider
+      class={className}
+      ref={sliderRef}
       aria-disabled={ariaDisabled}
       aria-label={ariaLabel}
       {...other}

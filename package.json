@@ -19,19 +19,20 @@
   "scripts": {
     "start": "run-p 'watch' 'start:usage'",
     "start:usage": "python3 usage.py",
-    "validate-init": "python3 _validate_init.py",
-    "prepublishOnly": "npm run validate-init",
     "build:js": "vite build --config vite.config.ts",
     "build:backends": "dash-generate-components ./src/ts/components liquid-plotly -p package-info.json --r-prefix 'ld' --jl-prefix 'ld' --ignore \\.test\\.",
-    "build": "npm run build:js && npm run build:backends",
+    "build:dist": "python3 setup.py sdist bdist_wheel",
+    "build": "npm run build:js && npm run build:backends && npm run build:dist",
     "watch": "run-p 'watch:**'",
     "watch:ts": "npm run build:js -- --watch",
     "watch:js": "chokidar 'liquid_plotly/*.ts' 'liquid_plotly/*.css' -c 'npm run build:backends'"
   },
   "author": "User Experience Strategy & Design unit, part of the Chief Digital Organization at EMD Group <liquid@emdgroup.com> (https://github.com/emdgroup-liquid)",
   "license": "SEE LICENSE IN LICENSE.md",
+  "dependencies": {
+    "@emdgroup-liquid/liquid": "^4.7.9"
+  },
   "devDependencies": {
-    "@emdgroup-liquid/liquid": "^4.7.9",
     "@rollup/plugin-replace": "^5.0.2",
     "@types/react": "^17.0.39",
     "@vitejs/plugin-react": "^3.1.0",
@@ -43,7 +44,6 @@
     "react": "^17.0.2",
     "react-docgen": "^5.4.0",
     "react-dom": "^17.0.2",
-    "rollup-plugin-copy": "^3.4.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.1",
     "typescript": "^4.9.5",

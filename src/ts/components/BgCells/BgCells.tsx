@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdBgCells } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -21,7 +20,7 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-bg-cells/ LdBgCells}.
  */
 const BgCells = (props: Props) => {
-  return <LdBgCells {...props} />
+  return <ld-bg-cells class={props.className} {...props} />
 }
 
 export default BgCells

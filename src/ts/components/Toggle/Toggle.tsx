@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdToggle } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -21,19 +20,33 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-toggle/ LdToggle}.
  */
 const Toggle = (props: Props) => {
-  const { setProps, ariaLabel, ariaDisabled, ...other } = props
+  const { setProps, className, ariaLabel, ariaDisabled, ...other } = props
+
+  const toggleRef = useRef<HTMLLdToggleElement>()
 
   const updateProps = (checked: boolean) => {
     setProps({ checked })
   }
 
+  const handleChange = (ev: CustomEvent<boolean>) => {
+    updateProps(ev.detail)
+  }
+
+  useEffect(() => {
+    toggleRef.current.addEventListener('ldchange', handleChange)
+    return () => {
+      toggleRef.current.removeEventListener('ldchange', handleChange)
+    }
+  }, [])
+
   return (
-    <LdToggle
-      onLdchange={(ev) => updateProps(ev.detail)}
+    <ld-toggle
+      ref={toggleRef}
+      class={className}
       aria-label={ariaLabel}
       aria-disabled={ariaDisabled}
       {...other}
-    ></LdToggle>
+    ></ld-toggle>
   )
 }
 

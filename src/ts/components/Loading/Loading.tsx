@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdLoading } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -17,7 +16,9 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-loading/ LdLoading}.
  */
 const Loading = (props: Props) => {
-  return <LdLoading {...props} />
+  const { className, ...other } = props
+
+  return <ld-loading class={className} {...other} />
 }
 
 export default Loading

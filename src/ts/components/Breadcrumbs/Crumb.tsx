@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdCrumb } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -26,9 +25,14 @@ const Crumb = (props: Props) => {
   }
 
   return (
-    <LdCrumb onClick={onClick} aria-label={ariaLabel} {...other}>
+    <ld-crumb
+      class={props.className}
+      onClick={onClick}
+      aria-label={ariaLabel}
+      {...other}
+    >
       {props.children}
-    </LdCrumb>
+    </ld-crumb>
   )
 }
 

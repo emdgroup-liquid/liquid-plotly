@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdBadge } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -22,13 +21,14 @@ type Props = {
  */
 const Badge = (props: Props) => {
   return (
-    <LdBadge
+    <ld-badge
+      class={props.className}
       {...props}
       aria-label={props.ariaLabel}
       size={props.size as Components.LdBadge['size']}
     >
       {props.children}
-    </LdBadge>
+    </ld-badge>
   )
 }
 

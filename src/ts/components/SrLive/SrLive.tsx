@@ -1,6 +1,5 @@
 import React, { Component, useEffect } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdSrLive } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -20,13 +19,15 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-sr-live/ LdSrLive}.
  */
 const SrLive = (props: Props) => {
+  const { className, ...other } = props
+
   useEffect(() => {
     const ev = props.event
     if (!ev) return
     dispatchEvent(new CustomEvent(ev.name, { detail: ev.detail }))
   }, [props.event])
 
-  return <LdSrLive {...props} />
+  return <ld-sr-live class={className} {...other} />
 }
 
 export default SrLive

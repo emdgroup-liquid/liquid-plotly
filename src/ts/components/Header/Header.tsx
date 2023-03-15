@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdHeader } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -21,9 +20,9 @@ type Props = {
  */
 const Header = (props: Props) => {
   return (
-    <LdHeader {...props} aria-label={props.ariaLabel}>
+    <ld-header class={props.className} {...props} aria-label={props.ariaLabel}>
       {props.children}
-    </LdHeader>
+    </ld-header>
   )
 }
 

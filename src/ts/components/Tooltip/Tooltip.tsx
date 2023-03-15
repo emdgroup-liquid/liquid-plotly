@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdTooltip } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -22,13 +21,14 @@ type Props = {
  */
 const Tooltip = (props: Props) => {
   return (
-    <LdTooltip
+    <ld-tooltip
+      class={props.className}
       {...props}
       aria-label={props.ariaLabel}
       size={props.size as Components.LdTooltip['size']}
     >
       {props.children}
-    </LdTooltip>
+    </ld-tooltip>
   )
 }
 

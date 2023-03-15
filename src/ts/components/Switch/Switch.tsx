@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdSwitch } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -25,21 +24,43 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-switch/ LdSwitch}.
  */
 const Switch = (props: Props) => {
-  const { setProps, ariaLabel, tone, ariaDisabled, children, ...other } = props
+  const {
+    setProps,
+    className,
+    ariaLabel,
+    tone,
+    ariaDisabled,
+    children,
+    ...other
+  } = props
+
+  const switchRef = useRef<HTMLLdSwitchElement>()
 
   const updateProps = (value: string) => {
     setProps({ value })
   }
 
+  const handleChange = (ev: CustomEvent<string>) => {
+    updateProps(ev.detail)
+  }
+
+  useEffect(() => {
+    switchRef.current.addEventListener('ldswitchchange', handleChange)
+    return () => {
+      switchRef.current.removeEventListener('ldswitchchange', handleChange)
+    }
+  }, [])
+
   return (
-    <LdSwitch
-      onLdswitchchange={(ev) => updateProps(ev.detail)}
+    <ld-switch
+      class={className}
       aria-label={ariaLabel}
+      ref={switchRef}
       aria-disabled={ariaDisabled}
       {...other}
     >
       {children}
-    </LdSwitch>
+    </ld-switch>
   )
 }
 

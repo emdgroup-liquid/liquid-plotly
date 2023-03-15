@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdInput } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -21,16 +20,32 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-input/ LdInput}.
  */
 const Input = (props: Props) => {
-  const onInput = (ev: CustomEvent<string>) => {
-    props.setProps({ value: ev.detail })
+  const { setProps, className, ariaLabel, tone, ...other } = props
+
+  const inputRef = useRef<HTMLLdInputElement>()
+
+  useEffect(() => {
+    inputRef.current.addEventListener('ldinput', handleInput)
+    return () => {
+      inputRef.current.removeEventListener('ldinput', handleInput)
+    }
+  })
+
+  const handleInput = (ev: CustomEvent<string>) => {
+    updateProps(ev.detail)
+  }
+
+  const updateProps = (value: string) => {
+    setProps({ value })
   }
 
   return (
-    <LdInput
-      {...props}
-      aria-label={props.ariaLabel}
-      onLdinput={onInput}
-      tone={props.tone as 'dark' | undefined}
+    <ld-input
+      ref={inputRef}
+      class={className}
+      aria-label={ariaLabel}
+      tone={tone as 'dark' | undefined}
+      {...other}
     />
   )
 }

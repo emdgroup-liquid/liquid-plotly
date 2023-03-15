@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { type Components } from '@emdgroup-liquid/liquid/dist/types/components'
-import { LdCardStack } from '@emdgroup-liquid/liquid/dist/react'
 import { DashComponentProps } from '../../props'
 
 type Props = {
@@ -17,7 +16,13 @@ type Props = {
  * {@link https://liquid.merck.design/liquid/components/ld-card/ld-card-stack/ LdCardStack}.
  */
 const CardStack = (props: Props) => {
-  return <LdCardStack {...props}>{props.children}</LdCardStack>
+  const { className, children, ...other } = props
+
+  return (
+    <ld-card-stack class={className} {...other}>
+      {children}
+    </ld-card-stack>
+  )
 }
 
 export default CardStack
