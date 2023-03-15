@@ -1,6 +1,6 @@
 {
   "name": "@emdgroup-liquid/liquid-plotly",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Liquid for Plotly",
   "repository": {
     "type": "git",

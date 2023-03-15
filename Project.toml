@@ -2,7 +2,7 @@
 name = "LiquidPlotly"
 uuid = "1b08a953-4be3-4667-9a23-d38116097dbd"
 authors = ["User Experience Strategy & Design unit, part of the Chief Digital Organization at EMD Group <liquid@emdgroup.com> (https://github.com/emdgroup-liquid)"]
-version = "0.0.0"
+version = "0.0.1"
 
 [deps]
 Dash = "1b08a953-4be3-4667-9a23-3db579824955"
